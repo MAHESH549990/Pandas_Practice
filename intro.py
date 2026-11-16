@@ -10,3 +10,4 @@ print(df)
 
 df2=pd.read_csv("raw_data.csv")
 print(df2)
+print(df2.head(3))
