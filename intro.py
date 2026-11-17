@@ -10,7 +10,13 @@ df=pd.read_csv("iris.csv")
 patel_length=df[(df["PetalLengthCm"]>4.7) & (df["Species"]=="Iris-virginica")]
 
 species=df[df["Species"]=="Iris-virginica"]
-print(patel_length)
+# print(patel_length)
 # print(species)
 
-print(df.groupby("Species")["SepalLengthC"].mean())
+
+df=df.assign(petal_ratio=df["PetalLengthCm"]/df["PetalWidthCm"])
+
+print(
+  df.groupby("Species")["petal_ratio"].mean()
+)
+# print(df)
