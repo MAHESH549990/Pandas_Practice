@@ -1,13 +1,16 @@
 import pandas as pd
 
-df=pd.DataFrame({
-  "Name":["Mahesh Bhatt","Neeraj Bhatt","Rohit Singh"],
-  "Age":[21,22,19],
-  "Programming":["JS","Python","C++"]
-})
+df=pd.read_csv("iris.csv")
 
-print(df)
+# print(df.head(10))
+# print(df.shape)
+# print(df.dtypes)
 
-df2=pd.read_csv("raw_data.csv")
-print(df2)
-print(df2.head(3))
+
+patel_length=df[(df["PetalLengthCm"]>4.7) & (df["Species"]=="Iris-virginica")]
+
+species=df[df["Species"]=="Iris-virginica"]
+print(patel_length)
+# print(species)
+
+print(df.groupby("Species")["SepalLengthC"].mean())
