@@ -19,4 +19,4 @@ df=df.assign(petal_ratio=df["PetalLengthCm"]/df["PetalWidthCm"])
 print(
   df.groupby("Species")["petal_ratio"].mean()
 )
-# print(df)
+print(df)
